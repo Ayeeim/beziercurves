@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="cubicbeziercurves/cubicbeziercurves.vcxproj" Id="2f230f0f-ed19-48fd-87cc-d4b8ef918205" />
+</Solution>
