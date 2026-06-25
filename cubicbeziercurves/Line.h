@@ -34,4 +34,6 @@ public:
 
 };
 
+void Draw_random_line(SDL_Renderer* rdr, int count);
+
 #endif // !LINE

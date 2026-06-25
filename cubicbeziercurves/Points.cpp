@@ -1,25 +1,18 @@
 #include <iostream>
 #include <SDL3/SDL.h>
 #include <vector>
-#include <cstdlib>
 #include "Constant.hpp"
 #include "Line.h"
  
 std::vector<Line> line;
 int points{ 2 };
 
-int brushSize = 1;
-
-void Change_brush_size(int value) {
-	brushSize += value;
-}
-
 // Draw a point to the set coordinate
 void Draw_point(SDL_Renderer* rdr, int x_, int y_) {
 	SDL_FRect rectPoint;
 
-	rectPoint.h = brushSize;
-	rectPoint.w = brushSize;
+	rectPoint.h = 1;
+	rectPoint.w = 1;
 	rectPoint.x = x_;
 	rectPoint.y = y_;
 

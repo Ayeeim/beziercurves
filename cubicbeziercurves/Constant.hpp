@@ -8,9 +8,14 @@
 #define HEIGH 900
 
 
-struct Coordinates {
+struct Vector2i {
 	int x;
 	int y;
+};
+
+struct Vector2 {
+	float x;
+	float y;
 };
 
 #endif // !CONSTANT

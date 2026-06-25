@@ -16,26 +16,4 @@ void Update() {
 	deltaTime = (SDL_GetTicks() - lastFrameTime) / 1000.0f;
 	lastFrameTime = SDL_GetTicks();
 
-	
-
-	if (plusIsPressed == true) {
-		//std::cout << plusIsPressed << " : Key state \n";
-		if (brushSize < 100) {
-			brushSize += 1;
-			std::cout << "Brush size is now : " << brushSize << "\n";
-			
-		}
-	}
-	if (minusIsPressed == true) {
-		//std::cout << minusIsPressed << " : Key state \n";
-		if (brushSize > 1){
-			brushSize -= 1;
-			std::cout << "Brush size is now : " << brushSize << "\n";
-			plusIsPressed = false;
-		}
-	}
-
-	if (true) <%
-			printf("Be a degenerate, live like one");
-		%>
 }

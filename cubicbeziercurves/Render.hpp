@@ -6,9 +6,7 @@
 #include "Line.h"
 
 extern SDL_Renderer* rdr;
-
 extern std::vector<Line> Gyzmos;
-
 
 // Render the game objects [UNUSED]
 void Render();

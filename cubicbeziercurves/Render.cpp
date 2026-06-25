@@ -3,21 +3,19 @@
 #include "Render.hpp"
 #include "Constant.hpp"
 
-//std::vector<> firstLayer;
+
+void DrawGyzmo();
 
 SDL_Renderer* rdr = NULL;
 
 std::vector<Line> Gyzmos;
+
 
 void Render() {
 	SDL_SetRenderDrawColor(rdr, 0, 0, 0, 255);
 	SDL_RenderClear(rdr); // Clear the renderer
 
 	DrawGyzmo();
-	 
-
-
-
 
 	SDL_SetRenderDrawColor(rdr, 255, 255, 255, 255);
 	Draw_point(rdr, 50, 50);
@@ -25,8 +23,6 @@ void Render() {
 	SDL_SetRenderDrawColor(rdr, 255, 0, 0, 255);
 	Draw_lines(rdr, 30, 30, 100, 150);
 	Draw_lines(rdr, 60, 30, 200, 60);
-
-	Draw_random_line(rdr, 1);
 
 	SDL_RenderPresent(rdr); // Show a new renderer
 }
