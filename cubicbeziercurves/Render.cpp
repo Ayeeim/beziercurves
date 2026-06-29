@@ -1,6 +1,6 @@
+#include "Render.hpp"
 #include <iostream>
 #include "Points.hpp"
-#include "Render.hpp"
 #include "Constant.hpp"
 
 

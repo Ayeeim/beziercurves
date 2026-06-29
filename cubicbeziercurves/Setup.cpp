@@ -7,7 +7,7 @@
 #include "Constant.hpp"
 
 // Start Prototype : 
-void Draw_random_line(int count, SDL_Color* color);
+void Draw_random_line_setup(int count, SDL_Color* color);
 // End Prototype
 
 
@@ -26,11 +26,11 @@ void Setup() {
 
 	Gyzmos.push_back(Line(10, 10, 10, 100, 180, &BLUE));
 
-	Draw_random_line(100, &GREEN);
+	Draw_random_line_setup(100, &GREEN);
 }
 
 
-void Draw_random_line(int count, SDL_Color * color) {
+void Draw_random_line_setup(int count, SDL_Color * color) {
 	for (int i = 0; i < count; i++) {
 
 		// Generate a random number for points A and B

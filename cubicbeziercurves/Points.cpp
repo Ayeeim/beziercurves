@@ -47,20 +47,6 @@ void Draw_lines(SDL_Renderer* rdr, int startingPointX, int startingPointY, int e
 	}
 }
 
-void Draw_random_line(SDL_Renderer* rdr, int count) {
-	for (int i = 0; i < count; i++) {
-
-		// Generate a random number for points A and B
-		int randomStartX = rand() % WIDTH;
-		int randomStartY = rand() % HEIGH;
-		int randomEndX = rand() % WIDTH;
-		int randomEndY = rand() % HEIGH;
-
-		printf("Valeur de X (fin début) : %d et %d \n valeurs de Y (fin et début) : %d et %d \n", randomStartX, randomEndX, randomStartY, randomEndY);
-		Draw_lines(rdr, randomStartX, randomStartY, randomEndX, randomEndY);
-	}
-}
-
 //void Add_point(float x, float y) {
 //	
 //}

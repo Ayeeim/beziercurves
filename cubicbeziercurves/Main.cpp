@@ -50,6 +50,7 @@ int main(int argc, char* args[]) {
 		Process_input();
 		Update();
 		Render();
+		Clear_input();
 	}
 
 	// End of program -vv
