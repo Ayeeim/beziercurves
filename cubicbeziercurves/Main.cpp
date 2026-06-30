@@ -47,7 +47,7 @@ int main(int argc, char* args[]) {
 
 	printf("Game is running : %d \n", gameIsRunning);
 	while (gameIsRunning) {
-		Process_input();
+		test_Process_input();
 		Update();
 		Render();
 		Clear_input();
