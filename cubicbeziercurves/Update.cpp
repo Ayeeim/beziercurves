@@ -17,7 +17,9 @@ void Update() {
 	lastFrameTime = SDL_GetTicks();
 
 	if (mouseButtonPressed[SDL_BUTTON_LEFT]) {
-		printf("Hoooray ! ");
+		printf("Hoooray ! \n");
+		
+
 	}
 
 }

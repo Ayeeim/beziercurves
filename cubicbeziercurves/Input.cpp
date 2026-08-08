@@ -33,6 +33,8 @@ void test_Process_input() {
 	SDL_Event event;
 	SDL_PollEvent(&event);
 
+	SDL_GetMouseState(mouseState.position.x, mouseState.position.y);
+
 	switch (event.type) {
 		case SDL_EVENT_QUIT:
 			gameIsRunning = false;
@@ -65,12 +67,19 @@ void test_Process_input() {
 			if (!event.key.repeat) {
 				mouseButtonDown[event.button.button] = true;
 				mouseButtonPressed[event.button.button] = true;
+
+				// register mouse on button pressed position
+				mouseState.BTDownPosition.x = event.button.x;
+				mouseState.BTDownPosition.x = event.button.y;
+
 				printf("\"%d\" Mouse button was pressed ! \n", event.button.button);
 			}
 			break;
 
 		case SDL_EVENT_MOUSE_BUTTON_UP:
 			mouseButtonDown[event.button.button] = false;
+			mouseState.BTUpPosition.x = event.button.x;
+			mouseState.BTUpPosition.y = event.button.y;
 			printf("\"%d\" Mouse button was released ! \n", event.button.button);
 			break;
 

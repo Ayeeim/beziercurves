@@ -5,10 +5,12 @@
 
 
 void DrawGyzmo();
+void DrawLayer();
 
 SDL_Renderer* rdr = NULL;
 
 std::vector<Line> Gyzmos;
+std::vector<Line> Lines;
 
 
 void Render() {
@@ -16,13 +18,8 @@ void Render() {
 	SDL_RenderClear(rdr); // Clear the renderer
 
 	DrawGyzmo();
-
-	SDL_SetRenderDrawColor(rdr, 255, 255, 255, 255);
-	Draw_point(rdr, 50, 50);
-
-	SDL_SetRenderDrawColor(rdr, 255, 0, 0, 255);
-	Draw_lines(rdr, 30, 30, 100, 150);
-	Draw_lines(rdr, 60, 30, 200, 60);
+	DrawLayer();
+	//DrawGUI();
 
 	SDL_RenderPresent(rdr); // Show a new renderer
 }
@@ -32,6 +29,14 @@ void DrawGyzmo() {
 
 	for (int i = 0; i < Gyzmos.size(); i++) {
 		SDL_Color tmpColor = Gyzmos[i].Get_color();
+		SDL_SetRenderDrawColor(rdr, tmpColor.r, tmpColor.g, tmpColor.b, tmpColor.a);
+		Gyzmos[i].Draw_lines(rdr);
+	}
+}
+
+void DrawLayer() {
+	for (int i = 0; i < Lines.size(); i++) {
+		SDL_Color tmpColor = Lines[i].Get_color();
 		SDL_SetRenderDrawColor(rdr, tmpColor.r, tmpColor.g, tmpColor.b, tmpColor.a);
 		Gyzmos[i].Draw_lines(rdr);
 	}
