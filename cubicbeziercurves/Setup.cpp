@@ -6,9 +6,9 @@
 #include "Render.hpp"
 #include "Constant.hpp"
 
-// Start Prototype : 
+// Start Prototypes : 
 void Draw_random_line_setup(int count, SDL_Color* color);
-// End Prototype
+// End Prototypes
 
 
 void Setup() {
@@ -24,9 +24,9 @@ void Setup() {
 	SDL_Color GREEN = { 0, 255, 0, 255 };
 	SDL_Color BLUE = { 0, 0, 255, 255 };
 
-	Gyzmos.push_back(Line(10, 10, 10, 100, 180, &BLUE));
+	//Gyzmos.push_back(Line(10, 10, 10, 100, 180, &BLUE));
 
-	Draw_random_line_setup(100, &GREEN);
+	//Draw_random_line_setup(100, &GREEN);
 }
 
 

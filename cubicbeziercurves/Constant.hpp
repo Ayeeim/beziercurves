@@ -9,13 +9,13 @@
 
 
 struct Vector2i {
-	int x;
-	int y;
+	int x = 0;
+	int y = 0;
 };
 
 struct Vector2 {
-	float x;
-	float y;
+	float x = 0;
+	float y = 0;
 };
 
 #endif // !CONSTANT

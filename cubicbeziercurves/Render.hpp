@@ -7,6 +7,8 @@
 
 extern SDL_Renderer* rdr;
 extern std::vector<Line> Gyzmos;
+extern std::vector<Line> Lines;
+
 
 // Render the game objects [UNUSED]
 void Render();

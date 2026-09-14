@@ -9,11 +9,11 @@ std::vector<Vector2i> pointList;
 
 
 // Draw a point to the set coordinate
-void Draw_point(SDL_Renderer* rdr, int x_, int y_) {
+void Draw_point(SDL_Renderer* rdr, int x_, int y_, int brushSize) {
 	SDL_FRect rectPoint;
 
-	rectPoint.h = 1;
-	rectPoint.w = 1;
+	rectPoint.h = brushSize;
+	rectPoint.w = brushSize;
 	rectPoint.x = x_;
 	rectPoint.y = y_;
 
@@ -21,7 +21,9 @@ void Draw_point(SDL_Renderer* rdr, int x_, int y_) {
 	SDL_RenderFillRect(rdr, &rectPoint);
 }
 
-
+/*
+[UNUSED]
+*/
 void AddPoint(Vector2i point) {
 	// si < 2
 	// Ajouter point

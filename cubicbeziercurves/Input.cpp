@@ -4,8 +4,6 @@
 #include <SDL3/SDL.h>
 #include "GameManager.hpp"
 #include "Input.hpp"
-#include "Constant.hpp"
-#include <string>
 
 
 // SDL number of mouse buttons 
@@ -28,12 +26,14 @@ bool keyPressed[SDL_SCANCODE_COUNT] = {};
 bool mouseButtonDown[MOUSE_BUTTON_COUNT] = {};
 bool mouseButtonPressed[MOUSE_BUTTON_COUNT] = {};
 
+MouseState mouseState;
+
 // 
 void test_Process_input() {
 	SDL_Event event;
 	SDL_PollEvent(&event);
 
-	SDL_GetMouseState(mouseState.position.x, mouseState.position.y);
+	SDL_GetMouseState(&mouseState.position.x, &mouseState.position.y);
 
 	switch (event.type) {
 		case SDL_EVENT_QUIT:
@@ -70,7 +70,7 @@ void test_Process_input() {
 
 				// register mouse on button pressed position
 				mouseState.BTDownPosition.x = event.button.x;
-				mouseState.BTDownPosition.x = event.button.y;
+				mouseState.BTDownPosition.y = event.button.y;
 
 				printf("\"%d\" Mouse button was pressed ! \n", event.button.button);
 			}

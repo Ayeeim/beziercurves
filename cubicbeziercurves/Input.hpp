@@ -2,11 +2,10 @@
 #define INPUT
 
 #include <SDL3/SDL.h>
+#include "Constant.hpp"
 
+// Process input from the user [in testing for now]
 void test_Process_input();
-
-// Process input from the user
-void Process_input();
 
 extern bool plusIsPressed;
 extern bool minusIsPressed;
@@ -27,7 +26,9 @@ struct MouseState
 	struct Vector2 position;
 	struct Vector2 BTDownPosition;
 	struct Vector2 BTUpPosition;
-} mouseState;
+};
+
+extern MouseState mouseState;
 
 // Clear the inputs (commonly at the end of a frame)
 void Clear_input();

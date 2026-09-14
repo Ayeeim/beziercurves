@@ -14,7 +14,7 @@ std::vector<Line> Lines;
 
 
 void Render() {
-	SDL_SetRenderDrawColor(rdr, 0, 0, 0, 255);
+	SDL_SetRenderDrawColor(rdr, 255, 255, 255, 255);
 	SDL_RenderClear(rdr); // Clear the renderer
 
 	DrawGyzmo();
@@ -34,10 +34,18 @@ void DrawGyzmo() {
 	}
 }
 
+/*
+
+Draw each layer one by one (line then vectors) for each layer 
+
+Make a vector of layers
+
+Add a deleting option (CTRL+Z) to dump the last added line(might also dump this line into another list or vector)
+*/
 void DrawLayer() {
 	for (int i = 0; i < Lines.size(); i++) {
 		SDL_Color tmpColor = Lines[i].Get_color();
 		SDL_SetRenderDrawColor(rdr, tmpColor.r, tmpColor.g, tmpColor.b, tmpColor.a);
-		Gyzmos[i].Draw_lines(rdr);
+		Lines[i].Draw_lines(rdr);
 	}
 }

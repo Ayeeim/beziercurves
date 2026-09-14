@@ -134,17 +134,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bezier.cpp" />
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Points.cpp" />
     <ClCompile Include="Render.cpp" />
+    <ClCompile Include="SavePNG.cpp" />
     <ClCompile Include="Setup.cpp" />
     <ClCompile Include="Update.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bezier.h" />
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="Constant.hpp" />
     <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="Input.hpp" />
