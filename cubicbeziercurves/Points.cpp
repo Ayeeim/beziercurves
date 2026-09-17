@@ -17,7 +17,6 @@ void Draw_point(SDL_Renderer* rdr, int x_, int y_, int brushSize) {
 	rectPoint.x = x_;
 	rectPoint.y = y_;
 
-	// Draws Left and Right wall
 	SDL_RenderFillRect(rdr, &rectPoint);
 }
 

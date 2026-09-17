@@ -2,11 +2,15 @@
 #include <iostream>
 #include "Points.hpp"
 #include "Constant.hpp"
+#include "SavePNG.h"
 
 
 void DrawGyzmo();
 void DrawLayer();
 
+/*
+Renderer of the current window
+*/
 SDL_Renderer* rdr = NULL;
 
 std::vector<Line> Gyzmos;
@@ -20,6 +24,11 @@ void Render() {
 	DrawGyzmo();
 	DrawLayer();
 	//DrawGUI();
+
+	if (Get_SavePNG()) {
+		Save_Image();
+		Set_SavePNG(false);
+	}
 
 	SDL_RenderPresent(rdr); // Show a new renderer
 }
@@ -35,7 +44,6 @@ void DrawGyzmo() {
 }
 
 /*
-
 Draw each layer one by one (line then vectors) for each layer 
 
 Make a vector of layers

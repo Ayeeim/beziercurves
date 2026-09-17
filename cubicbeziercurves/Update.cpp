@@ -3,6 +3,7 @@
 #include "Input.hpp"
 #include "Constant.hpp"
 #include "Render.hpp"
+#include "SavePNG.h"
 
 unsigned int lastFrameTime = 0;
 float deltaTime;
@@ -28,25 +29,26 @@ void Update() {
 	deltaTime = (SDL_GetTicks() - lastFrameTime) / 1000.0f;
 	lastFrameTime = SDL_GetTicks();
 
-	/*
-	
-	*/
+
 	if (keyDown[SDL_SCANCODE_KP_PLUS]) {
 		std::cout << "plus key was pressed !!!!";
 		brushSize++;
 	}
 
-	Line_tool();
+	if (keyPressed[SDL_SCANCODE_F2]) {
+		Set_SavePNG(true);
+	}
 
+	Line_tool();
 }
 
 /*
-
+	Temporary Line tool, will be replacecd with a real tool manager later on
 */
 void Line_tool() {
 	if (mouseButtonPressed[SDL_BUTTON_LEFT]) {
 		printf("Hoooray ! \n");
-
+		   
 		std::cout << "mouseState.BTDownPosition x : " << mouseState.BTDownPosition.x << ", y : " << mouseState.BTDownPosition.y << "\n";
 
 		if (firstPointSet == false) {

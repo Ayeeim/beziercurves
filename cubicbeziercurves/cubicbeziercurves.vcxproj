@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\SDL3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SDL3\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\SDL3\include;C:\SDL3_image-3.2.4\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL3\lib\x64;C:\SDL3_image-3.2.4\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -113,8 +113,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\SDL3\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\SDL3\lib\x64;C:\SDL3_image-3.2.4\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL3.lib;SDL3_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -154,6 +154,7 @@
     <ClInclude Include="Line.h" />
     <ClInclude Include="Points.hpp" />
     <ClInclude Include="Render.hpp" />
+    <ClInclude Include="SavePNG.h" />
     <ClInclude Include="Setup.hpp" />
     <ClInclude Include="Update.hpp" />
   </ItemGroup>

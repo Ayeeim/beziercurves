@@ -16,7 +16,7 @@ static bool initialize_window() {
 		return false;
 	}
 
-	win = SDL_CreateWindow("Bezier curves", WIDTH, HEIGH, 0); //SDL_WINDOW_RESIZABLE
+	win = SDL_CreateWindow("Bezier curves", WIDTH, HEIGH, SDL_WINDOW_RESIZABLE); //SDL_WINDOW_RESIZABLE
 	if (!win) {
 		fprintf(stderr, "Error initializing SDL. [erW02]\n");
 		return false;
