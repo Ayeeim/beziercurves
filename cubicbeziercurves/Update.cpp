@@ -46,8 +46,9 @@ void Update() {
 	Temporary Line tool, will be replacecd with a real tool manager later on
 */
 void Line_tool() {
+	//std::cout << "firstPointSet : " << firstPointSet << "\n";
+	//std::cout << "mouseButtonPressed[SDL_BUTTON_LEFT] : " << mouseButtonPressed[SDL_BUTTON_LEFT] << "\n";
 	if (mouseButtonPressed[SDL_BUTTON_LEFT]) {
-		printf("Hoooray ! \n");
 		   
 		std::cout << "mouseState.BTDownPosition x : " << mouseState.BTDownPosition.x << ", y : " << mouseState.BTDownPosition.y << "\n";
 

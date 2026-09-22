@@ -1,6 +1,10 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
 #include "Line.h"
 #include "Points.hpp"
-#include <iostream>
+
 
 int Line::Get_brushSize() {
 	return brushSize;
@@ -12,7 +16,11 @@ void Line::Set_brushSize(int val) {
 
 //...New
 void Line::Draw_lines(SDL_Renderer* rdr) {
-    //
+
+    std::vector<SDL_FRect> rects;
+    rects.reserve(std::max(std::abs(endX-startX), std::abs(startX-startY))+1);
+
+    // The lenght between
     int dx = endX - startX;
     //
     int dy = endY - startY;
@@ -54,6 +62,9 @@ void Line::Draw_lines(SDL_Renderer* rdr) {
             }
         }
     }
+
+
+    //SDL_RenderFillRects(rdr, rects.data(), rects.size());
 }
 
 /*

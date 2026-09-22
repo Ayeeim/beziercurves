@@ -64,16 +64,15 @@ void test_Process_input() {
 
 
 		case SDL_EVENT_MOUSE_BUTTON_DOWN:
-			if (!event.key.repeat) {
-				mouseButtonDown[event.button.button] = true;
-				mouseButtonPressed[event.button.button] = true;
+			mouseButtonDown[event.button.button] = true;
+			mouseButtonPressed[event.button.button] = true;
 
-				// register mouse on button pressed position
-				mouseState.BTDownPosition.x = event.button.x;
-				mouseState.BTDownPosition.y = event.button.y;
+			// register mouse on button pressed position
+			mouseState.BTDownPosition.x = event.button.x;
+			mouseState.BTDownPosition.y = event.button.y;
 
-				printf("\"%d\" Mouse button was pressed ! \n", event.button.button);
-			}
+			printf("\"%d\" Mouse button was pressed ! \n", event.button.button);
+			
 			break;
 
 		case SDL_EVENT_MOUSE_BUTTON_UP:
@@ -88,6 +87,9 @@ void test_Process_input() {
 	}
 }
 
+/// <summary>
+/// 
+/// </summary>
 void Clear_input() {
 	std::fill(keyPressed, keyPressed + SDL_SCANCODE_COUNT, false);
 	std::fill(mouseButtonPressed, mouseButtonPressed + MOUSE_BUTTON_COUNT, false);
