@@ -51,6 +51,7 @@ Make a vector of layers
 Add a deleting option (CTRL+Z) to dump the last added line(might also dump this line into another list or vector)
 */
 void DrawLayer() {
+	std::cout << "Size of rdr1 : " << sizeof(rdr) << " bytes \n";
 	for (int i = 0; i < Lines.size(); i++) {
 		SDL_Color tmpColor = Lines[i].Get_color();
 		SDL_SetRenderDrawColor(rdr, tmpColor.r, tmpColor.g, tmpColor.b, tmpColor.a);

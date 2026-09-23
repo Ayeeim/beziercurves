@@ -37,11 +37,11 @@ void Line::Draw_lines(SDL_Renderer* rdr) {
     float e = 0.0f, e2 = -1.0f;
 
     if (dx >= dy) {
-        // ligne plutôt horizontale : x est l'axe directeur
+        // ligne plutôt horizontale (x est l'axe directeur)
         float e1 = (dx == 0) ? 0.0f : (float)dy / (float)dx;
         int y = startY;
         for (int i = 0; i <= dx; i++) {
-            Draw_point(rdr, startX + i * stepX, y, brushSize);
+            Add_points(rects, startX + i * stepX, y, brushSize);
             e += e1;
             if (e >= 0.5f) {
                 y += stepY;
@@ -50,11 +50,11 @@ void Line::Draw_lines(SDL_Renderer* rdr) {
         }
     }
     else {
-        // ligne plutôt verticale : y est l'axe directeur
+        // ligne plutôt verticale (y est l'axe directeur)
         float e1 = (float)dx / (float)dy;
         int x = startX;
         for (int i = 0; i <= dy; i++) {
-            Draw_point(rdr, x, startY + i * stepY, brushSize);
+            Add_points(rects, x, startY + i * stepY, brushSize);
             e += e1;
             if (e >= 0.5f) {
                 x += stepX;
@@ -62,9 +62,10 @@ void Line::Draw_lines(SDL_Renderer* rdr) {
             }
         }
     }
+    std::cout << "Size of rects : " << sizeof(rects) << " bytes \n";
+    std::cout << "Size of rdr2 : " << sizeof(rdr) << " bytes \n";
 
-
-    //SDL_RenderFillRects(rdr, rects.data(), rects.size());
+    SDL_RenderFillRects(rdr, rects.data(), rects.size());
 }
 
 /*
