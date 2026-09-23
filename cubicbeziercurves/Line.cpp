@@ -62,34 +62,9 @@ void Line::Draw_lines(SDL_Renderer* rdr) {
             }
         }
     }
-    std::cout << "Size of rects : " << sizeof(rects) << " bytes \n";
-    std::cout << "Size of rdr2 : " << sizeof(rdr) << " bytes \n";
 
     SDL_RenderFillRects(rdr, rects.data(), rects.size());
 }
-
-/*
-// https://fr.wikipedia.org/wiki/Algorithme_de_trac%C3%A9_de_segment_de_Bresenham
-void Line::Draw_lines(SDL_Renderer* rdr) {
-	int dx = endX - startX;
-	int dy = endY - startY;
-	int y = startY;
-	// calcul du taux d'erreur
-	float e = 0.0, e1 = 0.0, e2 = 0.0;
-	e1 = (float)dy / (float)dx;
-	e2 = -1.0;
-	std::cout << "DX : " << dx << ", DY : " << dy << ", Y :" << y << "\n";
-	// i = x
-	for (int i = 0; i <= dx; i++) {
-		Draw_point(rdr, startX + i, y);
-		e += e1;
-		if (e >= 0.5) {
-			y = y + 1;
-			e = e + e2;
-		}
-	}
-}
-*/
 
 SDL_Color Line::Get_color() {
 

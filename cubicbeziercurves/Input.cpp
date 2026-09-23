@@ -5,21 +5,9 @@
 #include "GameManager.hpp"
 #include "Input.hpp"
 
-
 // SDL number of mouse buttons 
 // 0 is ignored
 const int MOUSE_BUTTON_COUNT = 6;
-
-float mouseX;
-float mouseY;
-
-bool plusIsPressed = false;
-bool minusIsPressed = false;
-int test = 50;
-
-bool leftMouseButton = false;
-bool rightMouseButton = false;
-bool middleMouseButton = false;
 
 bool keyDown[SDL_SCANCODE_COUNT] = {};
 bool keyPressed[SDL_SCANCODE_COUNT] = {};

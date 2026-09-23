@@ -7,17 +7,13 @@
 // Process input from the user [in testing for now]
 void test_Process_input();
 
-extern bool plusIsPressed;
-extern bool minusIsPressed;
-
-
 extern bool keyDown[SDL_SCANCODE_COUNT];
 extern bool keyPressed[SDL_SCANCODE_COUNT];
 extern bool mouseButtonDown[];
 extern bool mouseButtonPressed[];
 
 // Get the different posisitons of the mouse depending on states
-// s-------s
+// ---------
 // position = get the current position of the mouse 
 // BTDownPosition = get the position on mouse button down 
 // BTUpPosition = get the position on mouse button up 
